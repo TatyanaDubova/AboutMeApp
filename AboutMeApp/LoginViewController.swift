@@ -11,40 +11,35 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var forgotUserNameButton: UIButton!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
+    private let user = "User"
+    private let password = "Password"
     
-//MARK: - override funcs
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.user = user
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard userNameTextField.text == "User", passwordTextField.text == "Password" else {
-            showAlert(with: "Invalid login or password", and: "Please, enter correct login and password")
+        guard userNameTextField.text == user, passwordTextField.text == password else {
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password",
+                textField: passwordTextField
+            )
             return false
         }
         return true
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeTextField = segue.destination as? WelcomeViewController else { return }
-        welcomeTextField.welcomeText = "Welcome, " + (userNameTextField.text ?? "") + "!"
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-    }
-    
-//MARK: - IBActions
-    @IBAction func forgotUserNameButtonPressed() {
-        showAlert(with: "Oops!", and: "Your name is User 😉")
-    }
-    
-    @IBAction func forgotPasswordButtonPressed() {
-        showAlert(with: "Oops!", and: "Your password is Password 😉")
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(title: "Oops!", message: "Your name is \(user) 😉")
+        : showAlert(title: "Oops!", message: "Your password is \(password) 😉")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -52,16 +47,10 @@ final class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-    @IBAction func logInButtonPressed() {
-    }
-}
-
-//MARK: - UIAlertController
-extension LoginViewController {
-    private func showAlert(with title: String, and messege: String) {
-        let alert = UIAlertController(title: title, message: messege, preferredStyle: .alert)
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.passwordTextField.text = ""
+            textField?.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
