@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B8300992AD6D310002E1EF3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8300982AD6D310002E1EF3 /* User.swift */; };
+		7B83009D2AD6D95A002E1EF3 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83009C2AD6D95A002E1EF3 /* Gradient.swift */; };
+		7B8300A12AD6EED0002E1EF3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8300A02AD6EED0002E1EF3 /* TabBarController.swift */; };
+		7B8300A32AD6F631002E1EF3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8300A22AD6F631002E1EF3 /* InfoViewController.swift */; };
+		7B8300A52AD6F6B1002E1EF3 /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8300A42AD6F6B1002E1EF3 /* BioViewController.swift */; };
 		7BA0B1192AD040FD0084CD85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0B1182AD040FD0084CD85 /* AppDelegate.swift */; };
 		7BA0B11B2AD040FD0084CD85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0B11A2AD040FD0084CD85 /* SceneDelegate.swift */; };
 		7BA0B11D2AD040FD0084CD85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA0B11C2AD040FD0084CD85 /* LoginViewController.swift */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B8300982AD6D310002E1EF3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7B83009C2AD6D95A002E1EF3 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		7B8300A02AD6EED0002E1EF3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ../TabBarController.swift; sourceTree = "<group>"; };
+		7B8300A22AD6F631002E1EF3 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		7B8300A42AD6F6B1002E1EF3 /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
 		7BA0B1152AD040FD0084CD85 /* AboutMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AboutMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA0B1182AD040FD0084CD85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA0B11A2AD040FD0084CD85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +49,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B8300952AD6D15A002E1EF3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7BA0B11C2AD040FD0084CD85 /* LoginViewController.swift */,
+				7B8300A02AD6EED0002E1EF3 /* TabBarController.swift */,
+				7BA0B12C2AD063490084CD85 /* WelcomeViewController.swift */,
+				7B8300A22AD6F631002E1EF3 /* InfoViewController.swift */,
+				7B8300A42AD6F6B1002E1EF3 /* BioViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7B8300962AD6D1AC002E1EF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B8300982AD6D310002E1EF3 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7B8300972AD6D1C4002E1EF3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7B83009C2AD6D95A002E1EF3 /* Gradient.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7B8300A62AD72160002E1EF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7BA0B1212AD040FE0084CD85 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7BA0B10C2AD040FD0084CD85 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +104,15 @@
 		7BA0B1172AD040FD0084CD85 /* AboutMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				7B8300952AD6D15A002E1EF3 /* ViewControllers */,
+				7B8300962AD6D1AC002E1EF3 /* Models */,
+				7B8300972AD6D1C4002E1EF3 /* Extensions */,
 				7BA0B1182AD040FD0084CD85 /* AppDelegate.swift */,
 				7BA0B11A2AD040FD0084CD85 /* SceneDelegate.swift */,
-				7BA0B11C2AD040FD0084CD85 /* LoginViewController.swift */,
-				7BA0B12C2AD063490084CD85 /* WelcomeViewController.swift */,
 				7BA0B11E2AD040FD0084CD85 /* Main.storyboard */,
-				7BA0B1212AD040FE0084CD85 /* Assets.xcassets */,
 				7BA0B1232AD040FE0084CD85 /* LaunchScreen.storyboard */,
 				7BA0B1262AD040FE0084CD85 /* Info.plist */,
+				7B8300A62AD72160002E1EF3 /* Resources */,
 			);
 			path = AboutMeApp;
 			sourceTree = "<group>";
@@ -144,7 +191,12 @@
 				7BA0B11D2AD040FD0084CD85 /* LoginViewController.swift in Sources */,
 				7BA0B12D2AD063490084CD85 /* WelcomeViewController.swift in Sources */,
 				7BA0B1192AD040FD0084CD85 /* AppDelegate.swift in Sources */,
+				7B8300992AD6D310002E1EF3 /* User.swift in Sources */,
+				7B8300A12AD6EED0002E1EF3 /* TabBarController.swift in Sources */,
 				7BA0B11B2AD040FD0084CD85 /* SceneDelegate.swift in Sources */,
+				7B8300A32AD6F631002E1EF3 /* InfoViewController.swift in Sources */,
+				7B83009D2AD6D95A002E1EF3 /* Gradient.swift in Sources */,
+				7B8300A52AD6F6B1002E1EF3 /* BioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

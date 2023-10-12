@@ -19,8 +19,7 @@ final class TabBarController: UITabBarController {
         
         tabBar.standardAppearance = tabBarAppearance
         tabBar.scrollEdgeAppearance = tabBarAppearance
-        
-        tabBar.items?.last?.title = user.login
-
+        tabBar.items?.last?.title = user.person.fullName
     }
+    
 }
